@@ -12,8 +12,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-// require("./app/routing/apiRoutes")(app); //why is app there?
-// require("./app/routing/htmlRoutes")(app);
+require("./app/routing/apiRoutes")(app); //why is app there? do we need var?
+require("./app/routing/htmlRoutes")(app);
 
 app.listen(PORT, function() {
 	console.log("Listening on port: " + PORT);

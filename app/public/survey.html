@@ -17,7 +17,7 @@
       <h2 class="text-center">Find your new friend</h2>
       <br>
       <div class="text-center">
-        <a href="/tables"><button type="button" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list-alt"></span> View Tables</button></a>
+        <a href="/api/data/friends"><button type="button" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list-alt"></span> View Potential Friends</button></a>
         <a href="/"><button type="button" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-home"></span></button></a>
       </div>
     </div>
@@ -26,27 +26,72 @@
         <!-- Reservation Page -->
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h4 class="panel-title">Table Reservation</h4>
+            <h4 class="panel-title">Friend Finder Survey</h4>
+            <h4 class="panel=description">Enter your name, a picture, and how well the statements below describe you on a scale of 1-5 (1 = not at all, 5 = that's me!)</h4>
           </div>
           <div class="panel-body">
             <form role="form">
               <div class="form-group">
-                <label for="reserve-name">Name</label>
+                <label for="friend-name">Name</label>
                 <input type="text" class="form-control" id="reserve-name">
               </div>
               <div class="form-group">
-                <label for="reserve-phone">Phone Number</label>
-                <input type="text" class="form-control" id="reserve-phone">
+                <label for="friend-picture-URL">Picture</label>
+                <input type="text" class="form-control" id="reserve-phone" placeholder="Please upload a picture of yourself (jpg or png)">
               </div>
+              
+              <!-- Question 1 -->
               <div class="form-group">
-                <label for="reserve-email">Email</label>
-                <input type="text" class="form-control" id="reserve-email">
+                <label for="question-one">You love cats.</label>
+                <input type="number" min="1" max="5" class="rating" id="question-one">
               </div>
+              <!-- Question 2 -->
               <div class="form-group">
-                <label for="reserve-unique-id">Unique ID</label>
-                <input type="text" class="form-control" id="reserve-unique-id">
+                <label for="question-two">You prefer a quiet evening in over going out to a party.</label>
+                <input type="number" min="1" max="5" class="rating" id="question-two">
               </div>
-              <button type="submit" class="btn btn-primary submit">Submit</button>
+              <!-- Question 3 -->
+              <div class="form-group">
+                <label for="question-three">You prefer a scenic outdoor hike over going to a movie theater.</label>
+                <input type="number" min="1" max="5" class="rating" id="question-three">
+              </div>
+              <!-- Question 4 -->
+              <div class="form-group">
+                <label for="question-four">You like programming.</label>
+                <input type="number" min="1" max="5" class="rating" id="question-four">
+              </div>
+              <!-- Question 5 -->
+              <div class="form-group">
+                <label for="question-five">You find it easy to respect others even if their beliefs may be different from your own.</label>
+                <input type="number" min="1" max="5" class="rating" id="question-five">
+              </div>
+              <!-- Question 6 -->
+              <div class="form-group">
+                <label for="question-six">You are curious about the world, and always eager to learn.</label>
+                <input type="number" min="1" max="5" class="rating" id="question-six">
+              </div>
+              <!-- Question 7 -->
+              <div class="form-group">
+                <label for="question-seven">You care about contributing positively to your community.</label>
+                <input type="number" min="1" max="5" class="rating" id="question-seven">
+              </div>
+              <!-- Question 8 -->
+              <div class="form-group">
+                <label for="question-eight">You enjoy having political debates with others.</label>
+                <input type="number" min="1" max="5" class="rating" id="question-eight">
+              </div>
+              <!-- Question 9 -->
+              <div class="form-group">
+                <label for="question-nine">You prefer having a few very close friends over having many somewhat close friends.</label>
+                <input type="number" min="1" max="5" class="rating" id="question-nine">
+              </div>
+              <!-- Question 10 -->
+              <div class="form-group">
+                <label for="question-ten">You enjoy board games.</label>
+                <input type="number" min="1" max="5" class="rating" id="question-ten">
+              </div>
+
+              <button type="submit" class="btn btn-primary submit">Find your new friend!</button>
             </form>
           </div>
         </div>
@@ -54,7 +99,7 @@
     </div>
     <footer class="footer">
       <div class="container">
-        <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> | <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a></p>
+        <p><a href="/api/data/friends">Look at potential friends</a> | <a href="https://github.com/mford008/friend-finder.git" target="_">GitHub Repo</a></p></p>
       </div>
     </footer>
   </div>
@@ -69,27 +114,36 @@
     $(".submit").on("click", function(event) {
       event.preventDefault();
       // Here we grab the form elements
-      var newReservation = {
-        customerName: $("#reserve-name").val().trim(),
-        phoneNumber: $("#reserve-phone").val().trim(),
-        customerEmail: $("#reserve-email").val().trim(),
-        customerID: $("#reserve-unique-id").val().trim()
+      var newFriend = {
+        question-one: $("#question-one").val().trim(),
+        question-two: $("#question-two").val().trim(),
+        question-three: $("#question-three").val().trim(),
+        question-four: $("#question-four").val().trim(),
+        question-five: $("#question-five").val().trim(),
+        question-six: $("#question-six").val().trim(),
+        question-seven: $("#question-seven").val().trim(),
+        question-eight: $("#question-eight").val().trim(),
+        question-nine: $("#question-nine").val().trim(),
+        question-ten: $("#question-ten").val().trim(),
+        // phoneNumber: $("#reserve-phone").val().trim(),
+        // customerEmail: $("#reserve-email").val().trim(),
+        // customerID: $("#reserve-unique-id").val().trim()
       };
-      console.log(newReservation);
+      console.log(newFriend);
       // This line is the magic. It"s very similar to the standard ajax function we used.
       // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
       // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
       // depending on if a tables is available or not.
-      $.post("/api/tables", newReservation,
+      $.post("/api/data/friends", newFriend,
         function(data) {
           // If a table is available... tell user they are booked.
           if (data) {
-            alert("Yay! You are officially booked!");
+            alert("Yay! New friends!");
           }
           // If a table is available... tell user they on the waiting list.
-          else {
-            alert("Sorry you are on the wait list");
-          }
+          // else {
+          //   alert("Sorry you are on the wait list");
+          // }
           // Clear the form when submitting
           $("#reserve-name").val("");
           $("#reserve-phone").val("");

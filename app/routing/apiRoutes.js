@@ -1,5 +1,5 @@
-var tableData = require("../data/tableData");
-var waitListData = require("../data/waitinglistData");
+var friendData = require("../data/friends");
+// var waitListData = require("../data/waitinglistData");
 
 module.exports = function(app) {
 
@@ -10,4 +10,5 @@ console.log("friends!");
 
 app.get("/api/survey", function(req, res) {
 res.json(friendData);
-});
+})
+};
