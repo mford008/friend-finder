@@ -17,7 +17,7 @@
       <h2 class="text-center">Find your new friend</h2>
       <br>
       <div class="text-center">
-        <a href="/api/data/friends"><button type="button" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list-alt"></span> View Potential Friends</button></a>
+        <a href="/api/friends"><button type="button" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list-alt"></span> View Potential Friends</button></a>
         <a href="/"><button type="button" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-home"></span></button></a>
       </div>
     </div>
@@ -99,7 +99,7 @@
     </div>
     <footer class="footer">
       <div class="container">
-        <p><a href="/api/data/friends">Look at potential friends</a> | <a href="https://github.com/mford008/friend-finder.git" target="_">GitHub Repo</a></p></p>
+        <p><a href="/api/friends">View potential friends</a> | <a href="https://github.com/mford008/friend-finder.git" target="_">GitHub Repo</a></p></p>
       </div>
     </footer>
   </div>
@@ -130,11 +130,15 @@
         // customerID: $("#reserve-unique-id").val().trim()
       };
       console.log(newFriend);
+      alert("Profile added!")
+
+      // alert(closestMatch);
+
       // This line is the magic. It"s very similar to the standard ajax function we used.
       // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
       // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
       // depending on if a tables is available or not.
-      $.post("/api/data/friends", newFriend,
+      $post("/api/friends", newFriend,
         function(data) {
           // If a table is available... tell user they are booked.
           if (data) {
@@ -145,10 +149,16 @@
           //   alert("Sorry you are on the wait list");
           // }
           // Clear the form when submitting
-          $("#reserve-name").val("");
-          $("#reserve-phone").val("");
-          $("#reserve-email").val("");
-          $("#reserve-unique-id").val("");
+          $("#question-one").val("");
+          $("#question-two").val("");
+          $("#question-three").val("");
+          $("#question-four").val("");
+          $("#question-five").val("");
+          $("#question-six").val("");
+          $("#question-seven").val("");
+          $("#question-eight").val("");
+          $("#question-nine").val("");
+          $("#question-ten").val("");
         });
     });
 </script>
