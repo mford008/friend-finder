@@ -1,0 +1,26 @@
+{
+  "name": "friend-finder",
+  "version": "1.0.0",
+  "description": "UCB Homework assignment on node and express",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mford008/friend-finder.git"
+  },
+  "keywords": [
+    "friend-finder"
+  ],
+  "author": "me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mford008/friend-finder/issues"
+  },
+  "homepage": "https://github.com/mford008/friend-finder#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
