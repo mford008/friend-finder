@@ -32,12 +32,12 @@
           <div class="panel-body">
             <form role="form">
               <div class="form-group">
-                <label for="friend-name">Name</label>
-                <input type="text" class="form-control" id="friend-name">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name">
               </div>
               <div class="form-group">
-                <label for="friend-picture-URL">Picture</label>
-                <input type="text" class="form-control" id="friend-pic" placeholder="Please upload a picture of yourself (jpg or png)">
+                <label for="picture">Picture</label>
+                <input type="text" class="form-control" id="picture" placeholder="Please upload a picture of yourself (jpg or png)">
               </div>
               
               <!-- Question 1 -->
@@ -115,8 +115,10 @@
       event.preventDefault();
       // Here we grab the form elements
       var newFriend = {
-        friend_name: $("#friend-name").val("");,
-        friend_pic: $("#friend-pic").val("");
+        // friend_name: $("#friend-name").val(""),
+        // friend_pic: $("#friend-pic").val(""),
+        name: $("#name").val().trim(),
+        picture: $("#picture").val().trim(),
         question_one: $("#question-one").val().trim(),
         question_two: $("#question-two").val().trim(),
         question_three: $("#question-three").val().trim(),
@@ -131,8 +133,8 @@
         // customerEmail: $("#reserve-email").val().trim(),
         // customerID: $("#reserve-unique-id").val().trim()
       };
-      console.log(newFriend); //not currently happening
-      alert("Profile added!")
+      console.log(newFriend);
+      alert("Profile added!");
 
       // alert(closestMatch);
 
@@ -151,8 +153,11 @@
           //   alert("Sorry you are on the wait list");
           // }
           // Clear the form when submitting
-          $("#friend-name").val("");
-          $("#friend-pic").val("");
+          $("#name").val("");
+          $("#picture").val("");
+
+          // $("#friend-name").val(""); //problem with friend info lines??
+          // $("#friend-pic").val("");
           $("#question-one").val("");
           $("#question-two").val("");
           $("#question-three").val("");
