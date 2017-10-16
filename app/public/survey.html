@@ -37,57 +37,57 @@
               </div>
               <div class="form-group">
                 <label for="picture">Picture</label>
-                <input type="text" class="form-control" id="picture" placeholder="Please upload a picture of yourself (jpg or png)">
+                <input type="text" class="form-control" id="picture" placeholder="Please include a picture of yourself">
               </div>
               
               <!-- Question 1 -->
               <div class="form-group">
-                <label for="question-one">You love cats.</label>
+                <label for="question-one">1. You love cats.</label>
                 <input type="number" min="1" max="5" class="rating" id="question-one">
               </div>
               <!-- Question 2 -->
               <div class="form-group">
-                <label for="question-two">You prefer a quiet evening in over going out to a party.</label>
+                <label for="question-two">2. You prefer a quiet evening in over going out to a party.</label>
                 <input type="number" min="1" max="5" class="rating" id="question-two">
               </div>
               <!-- Question 3 -->
               <div class="form-group">
-                <label for="question-three">You prefer a scenic outdoor hike over going to a movie theater.</label>
+                <label for="question-three">3. You prefer a scenic outdoor hike over going to a movie theater.</label>
                 <input type="number" min="1" max="5" class="rating" id="question-three">
               </div>
               <!-- Question 4 -->
               <div class="form-group">
-                <label for="question-four">You like programming.</label>
+                <label for="question-four">4. You like programming.</label>
                 <input type="number" min="1" max="5" class="rating" id="question-four">
               </div>
               <!-- Question 5 -->
               <div class="form-group">
-                <label for="question-five">You find it easy to respect others even if their beliefs may be different from your own.</label>
+                <label for="question-five">5. You find it easy to respect others even if their beliefs may be different from your own.</label>
                 <input type="number" min="1" max="5" class="rating" id="question-five">
               </div>
               <!-- Question 6 -->
               <div class="form-group">
-                <label for="question-six">You are curious about the world, and always eager to learn.</label>
+                <label for="question-six">6. You are curious about the world, and always eager to learn.</label>
                 <input type="number" min="1" max="5" class="rating" id="question-six">
               </div>
               <!-- Question 7 -->
               <div class="form-group">
-                <label for="question-seven">You care about contributing positively to your community.</label>
+                <label for="question-seven">7. You care about contributing positively to your community.</label>
                 <input type="number" min="1" max="5" class="rating" id="question-seven">
               </div>
               <!-- Question 8 -->
               <div class="form-group">
-                <label for="question-eight">You enjoy having political debates with others.</label>
+                <label for="question-eight">8. You enjoy having political debates with others.</label>
                 <input type="number" min="1" max="5" class="rating" id="question-eight">
               </div>
               <!-- Question 9 -->
               <div class="form-group">
-                <label for="question-nine">You prefer having a few very close friends over having many somewhat close friends.</label>
+                <label for="question-nine">9. You prefer having a few very close friends over having many somewhat close friends.</label>
                 <input type="number" min="1" max="5" class="rating" id="question-nine">
               </div>
               <!-- Question 10 -->
               <div class="form-group">
-                <label for="question-ten">You enjoy board games.</label>
+                <label for="question-ten">10. You enjoy board games.</label>
                 <input type="number" min="1" max="5" class="rating" id="question-ten">
               </div>
 
@@ -146,7 +146,7 @@
         function(data) {
           // If a table is available... tell user they are booked.
           if (data) {
-            alert("Yay! New friends!");
+            console.log("Yay! New friends!");
           }
           // If a table is available... tell user they on the waiting list.
           // else {
