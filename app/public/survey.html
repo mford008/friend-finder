@@ -33,11 +33,11 @@
             <form role="form">
               <div class="form-group">
                 <label for="friend-name">Name</label>
-                <input type="text" class="form-control" id="reserve-name">
+                <input type="text" class="form-control" id="friend-name">
               </div>
               <div class="form-group">
                 <label for="friend-picture-URL">Picture</label>
-                <input type="text" class="form-control" id="reserve-phone" placeholder="Please upload a picture of yourself (jpg or png)">
+                <input type="text" class="form-control" id="friend-pic" placeholder="Please upload a picture of yourself (jpg or png)">
               </div>
               
               <!-- Question 1 -->
@@ -91,7 +91,7 @@
                 <input type="number" min="1" max="5" class="rating" id="question-ten">
               </div>
 
-              <button type="submit" class="btn btn-primary submit">Find your new friend!</button>
+              <button type="submit" class="btn btn-primary submit">Submit</button>
             </form>
           </div>
         </div>
@@ -115,21 +115,23 @@
       event.preventDefault();
       // Here we grab the form elements
       var newFriend = {
-        question-one: $("#question-one").val().trim(),
-        question-two: $("#question-two").val().trim(),
-        question-three: $("#question-three").val().trim(),
-        question-four: $("#question-four").val().trim(),
-        question-five: $("#question-five").val().trim(),
-        question-six: $("#question-six").val().trim(),
-        question-seven: $("#question-seven").val().trim(),
-        question-eight: $("#question-eight").val().trim(),
-        question-nine: $("#question-nine").val().trim(),
-        question-ten: $("#question-ten").val().trim(),
+        friend_name: $("#friend-name").val("");,
+        friend_pic: $("#friend-pic").val("");
+        question_one: $("#question-one").val().trim(),
+        question_two: $("#question-two").val().trim(),
+        question_three: $("#question-three").val().trim(),
+        question_four: $("#question-four").val().trim(),
+        question_five: $("#question-five").val().trim(),
+        question_six: $("#question-six").val().trim(),
+        question_seven: $("#question-seven").val().trim(),
+        question_eight: $("#question-eight").val().trim(),
+        question_nine: $("#question-nine").val().trim(),
+        question_ten: $("#question-ten").val().trim(),
         // phoneNumber: $("#reserve-phone").val().trim(),
         // customerEmail: $("#reserve-email").val().trim(),
         // customerID: $("#reserve-unique-id").val().trim()
       };
-      console.log(newFriend);
+      console.log(newFriend); //not currently happening
       alert("Profile added!")
 
       // alert(closestMatch);
@@ -149,6 +151,8 @@
           //   alert("Sorry you are on the wait list");
           // }
           // Clear the form when submitting
+          $("#friend-name").val("");
+          $("#friend-pic").val("");
           $("#question-one").val("");
           $("#question-two").val("");
           $("#question-three").val("");
