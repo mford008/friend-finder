@@ -12,13 +12,13 @@
 <body>
   <div class="container">
     <div class="jumbotron">
-      <h1 class="text-center"><span class="glyphicon glyphicon-fire"></span> Friend Finder</h1>
+      <h1 class="text-center"><span class="glyphicon glyphicon-user"></span> Friend Finder</h1>
       <hr>
       <h2 class="text-center">Find your new friend</h2>
       <br>
       <div class="text-center">
-        <a href="/api/friends"><button type="button" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list-alt"></span> View Potential Friends</button></a>
-        <a href="/"><button type="button" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-home"></span></button></a>
+        <a href="/api/friends"><button type="button" class="btn btn-lg btn-success"><span class="glyphicon glyphicon-list-alt"></span> View Potential Friends</button></a>
+        <a href="/"><button type="button" class="btn btn-lg btn-info"><span class="glyphicon glyphicon-home"></span></button></a>
       </div>
     </div>
     <div class="row">
@@ -91,7 +91,7 @@
                 <input type="number" min="1" max="5" class="rating" id="question-ten">
               </div>
 
-              <button type="submit" class="btn btn-primary submit">Submit</button>
+              <button type="submit" class="btn btn-info submit">Submit</button>
             </form>
           </div>
         </div>
@@ -172,21 +172,21 @@
 
 //  code for comparing friend compatibility
 
-  for (i = 0; i < friendsArray.length; i++) { //going through array survey entries are pushed to
+  // for (i = 0; i < friendsArray.length; i++) { //going through array survey entries are pushed to
 
-    var differences = [ ] //for temporarily storing differences between two surveys
+    // var differences = [ ] //for temporarily storing differences between two surveys
 
-    differences.push(absolute value of (i.question_one - (i+1).question_one));
-    differences.push(absolute value of (i.question_two - (i+1).question_two));
-    differences.push(absolute value of (i.question_three - (i+1).question_three));
-    differences.push(absolute value of (i.question_four - (i+1).question_four));
-    differences.push(absolute value of (i.question_five - (i+1).question_five));
-    differences.push(absolute value of (i.question_six - (i+1).question_six));
-    differences.push(absolute value of (i.question_seven - (i+1).question_seven));
-    differences.push(absolute value of (i.question_eight - (i+1).question_eight));
-    differences.push(absolute value of (i.question_nine - (i+1).question_nine));
-    differences.push(absolute value of (i.question_ten - (i+1).question_ten));
-    // there is to be a more concise way to do this... haven't thought of it yet.
+    // differences.push(absolute value of (i.question_one - (i+1).question_one));
+    // differences.push(absolute value of (i.question_two - (i+1).question_two));
+    // differences.push(absolute value of (i.question_three - (i+1).question_three));
+    // differences.push(absolute value of (i.question_four - (i+1).question_four));
+    // differences.push(absolute value of (i.question_five - (i+1).question_five));
+    // differences.push(absolute value of (i.question_six - (i+1).question_six));
+    // differences.push(absolute value of (i.question_seven - (i+1).question_seven));
+    // differences.push(absolute value of (i.question_eight - (i+1).question_eight));
+    // differences.push(absolute value of (i.question_nine - (i+1).question_nine));
+    // differences.push(absolute value of (i.question_ten - (i+1).question_ten));
+    // // there is to be a more concise way to do this... haven't thought of it yet.
 
     // sum of all i in differences array = var total_difference
 
@@ -197,7 +197,7 @@
     // print that person's name to an alert
 
 
-  }
+  // }
 
     });
 </script>
