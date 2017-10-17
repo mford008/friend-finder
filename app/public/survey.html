@@ -169,5 +169,35 @@
           $("#question-nine").val("");
           $("#question-ten").val("");
         });
+
+//  code for comparing friend compatibility
+
+  for (i = 0; i < friendsArray.length; i++) { //going through array survey entries are pushed to
+
+    var differences = [ ] //for temporarily storing differences between two surveys
+
+    differences.push(absolute value of (i.question_one - (i+1).question_one));
+    differences.push(absolute value of (i.question_two - (i+1).question_two));
+    differences.push(absolute value of (i.question_three - (i+1).question_three));
+    differences.push(absolute value of (i.question_four - (i+1).question_four));
+    differences.push(absolute value of (i.question_five - (i+1).question_five));
+    differences.push(absolute value of (i.question_six - (i+1).question_six));
+    differences.push(absolute value of (i.question_seven - (i+1).question_seven));
+    differences.push(absolute value of (i.question_eight - (i+1).question_eight));
+    differences.push(absolute value of (i.question_nine - (i+1).question_nine));
+    differences.push(absolute value of (i.question_ten - (i+1).question_ten));
+    // there is to be a more concise way to do this... haven't thought of it yet.
+
+    // sum of all i in differences array = var total_difference
+
+    // push total_ difference to object... can you push to an object within an array?
+    
+    // find a way of comparing all the total differences and selecting the lowest question_one
+
+    // print that person's name to an alert
+
+
+  }
+
     });
 </script>
