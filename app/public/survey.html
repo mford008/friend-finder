@@ -271,11 +271,17 @@
       // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
       // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
       // depending on if a tables is available or not.
-      $.post("/api/friends", newFriend,
+      var URL = window.location.origin;
+
+      $.post(URL + "/api/friends", newFriend,
         function(data) {
           // If a table is available... tell user they are booked.
           if (data) {
             console.log("Yay! New friends!");
+          $("#matchName").text(data.name);
+          $("#matchImg").text("src", data.picture);
+          $("#resultsModal").modal('toggle');
+
           }
           // If a table is available... tell user they on the waiting list.
           // else {
