@@ -22,12 +22,22 @@ res.json(friendData);
 app.post("/api/friends", function(req, res) {
 	friends.push(req.body);
 	res.json(true);
+// where the caculation should be done
 });
 
+
+
+
+
+// not entirely necessary
 app.post("/api/clear", function() {
 	friends = [];
 
 	console.log("Cleared: " + friends);
 });
+
+
+
+
 
 };

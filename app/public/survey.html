@@ -195,8 +195,34 @@
   </div>
 </body>
 </html>
+
+
+
+<!-- Modal -->
+  <div id="resultsModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"></button>
+          <h2 class="modal-title"><strong>Your best friend match is:</strong></h2>
+        </div>
+        <div class="modal-body">
+          <h2 id="matchName"></h2>
+          <img id="matchImg" src="" alt="">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+
+
+
 <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
-<script type="text/javascript">
+// <script type="text/javascript">
     // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
     // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
     // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
@@ -209,16 +235,29 @@
         // friend_pic: $("#friend-pic").val(""),
         name: $("#name").val().trim(),
         picture: $("#picture").val().trim(),
-        question_one: $("#question-one").val().trim(),
-        question_two: $("#question-two").val().trim(),
-        question_three: $("#question-three").val().trim(),
-        question_four: $("#question-four").val().trim(),
-        question_five: $("#question-five").val().trim(),
-        question_six: $("#question-six").val().trim(),
-        question_seven: $("#question-seven").val().trim(),
-        question_eight: $("#question-eight").val().trim(),
-        question_nine: $("#question-nine").val().trim(),
-        question_ten: $("#question-ten").val().trim(),
+        // question_one: $("#question-one").val().trim(),
+        // question_two: $("#question-two").val().trim(),
+        // question_three: $("#question-three").val().trim(),
+        // question_four: $("#question-four").val().trim(),
+        // question_five: $("#question-five").val().trim(),
+        // question_six: $("#question-six").val().trim(),
+        // question_seven: $("#question-seven").val().trim(),
+        // question_eight: $("#question-eight").val().trim(),
+        // question_nine: $("#question-nine").val().trim(),
+        // question_ten: $("#question-ten").val().trim(),
+        
+        scores: [
+                $("#question-one").val().trim(), 
+                $("#question-two").val().trim(),
+                $("#question-three").val().trim(),
+                $("#question-four").val().trim(),
+                $("#question-five").val().trim(),
+                $("#question-six").val().trim(),
+                $("#question-seven").val().trim(),
+                $("#question-eight").val().trim(),
+                $("#question-nine").val().trim(),
+                $("#question-ten").val().trim()
+                ]
         // phoneNumber: $("#reserve-phone").val().trim(),
         // customerEmail: $("#reserve-email").val().trim(),
         // customerID: $("#reserve-unique-id").val().trim()
@@ -260,6 +299,11 @@
           $("#question-ten").val("");
         });
 
+      
+
+    
+
+    };  
 //  code for comparing friend compatibility
 
   // for (i = 0; i < friendsArray.length; i++) { //going through array survey entries are pushed to
