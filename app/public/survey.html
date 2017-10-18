@@ -209,7 +209,7 @@
         </div>
         <div class="modal-body">
           <h2 id="matchName"></h2>
-          <img id="matchImg" src="" alt="">
+          <img id="matchPic" src="" alt="">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
@@ -235,17 +235,6 @@
         // friend_pic: $("#friend-pic").val(""),
         name: $("#name").val().trim(),
         picture: $("#picture").val().trim(),
-        // question_one: $("#question-one").val().trim(),
-        // question_two: $("#question-two").val().trim(),
-        // question_three: $("#question-three").val().trim(),
-        // question_four: $("#question-four").val().trim(),
-        // question_five: $("#question-five").val().trim(),
-        // question_six: $("#question-six").val().trim(),
-        // question_seven: $("#question-seven").val().trim(),
-        // question_eight: $("#question-eight").val().trim(),
-        // question_nine: $("#question-nine").val().trim(),
-        // question_ten: $("#question-ten").val().trim(),
-        
         scores: [
                 $("#question-one").val().trim(), 
                 $("#question-two").val().trim(),
@@ -258,9 +247,7 @@
                 $("#question-nine").val().trim(),
                 $("#question-ten").val().trim()
                 ]
-        // phoneNumber: $("#reserve-phone").val().trim(),
-        // customerEmail: $("#reserve-email").val().trim(),
-        // customerID: $("#reserve-unique-id").val().trim()
+        
       };
       console.log(newFriend);
       alert("Profile added!");
@@ -279,7 +266,7 @@
           if (data) {
             console.log("Yay! New friends!");
           $("#matchName").text(data.name);
-          $("#matchImg").text("src", data.picture);
+          $("#matchPic").text("src", data.picture);
           $("#resultsModal").modal('toggle');
 
           }
@@ -309,7 +296,7 @@
 
     
 
-    };  
+    });  
 //  code for comparing friend compatibility
 
   // for (i = 0; i < friendsArray.length; i++) { //going through array survey entries are pushed to
@@ -339,5 +326,5 @@
 
   // }
 
-    });
+    // });
 </script>

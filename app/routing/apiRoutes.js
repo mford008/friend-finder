@@ -22,11 +22,13 @@ res.json(friendData);
 app.post("/api/friends", function(req, res) {
 	friends.push(req.body);
 	res.json(true);
-// where the caculation should be done
+
+
+// best friend match calculation, under testing
 var bestMatch = {
 	name: "",
 	picture: "",
-	friendDifference: 0
+	friendDifference: 0 //individual difference this friend has from most recent survey input
 }
 
 var newFriend = req.body;
@@ -34,13 +36,14 @@ var newFriendName = newFriend.name;
 var newFriendPicture = newFriend.picture;
 var newFriendScores = newFriend.scores;
 
-var totalDifference = 0;
+// var totalDifference = 0;
 
-for (var i = 0; i < friends.length; i++) {
-	console.log(friends[i].name);
-		totalDifference = 0;
+for (var i = 0; i < friendArray.length; i++) { //loop through all friends
+	console.log("hello", friends[i].name); //coming up as undefined
+		var totalDifference = 0;
 
-		for (var j = 0; j < friends[i].scores[j]; j++) {
+		for (var j = 0; j < friendArray[i].scores[j]; j++) {
+			
 			totalDifference += Math.abs((newFriendScores[j]) - (friends[i].scores[j]));
 		}
 }
@@ -54,18 +57,11 @@ res.json(bestMatch);
 });
 
 
-
-
-
-// not entirely necessary
+// clearing out array
 app.post("/api/clear", function() {
 	friends = [];
 
 	console.log("Cleared: " + friends);
 });
-
-
-
-
 
 };
