@@ -1,21 +1,20 @@
-<!-- html page for the survey -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Survey Page</title>
-  <!-- Latest compiled and minified CSS & JS -->
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> <!--why is this here?-->
 </head>
 <body>
   <div class="container">
     <div class="jumbotron">
       <h1 class="text-center"><span class="glyphicon glyphicon-user"></span> Friend Finder</h1>
-      <hr>
+        <br>
       <h2 class="text-center">Find your new friend</h2>
-      <br>
+        <br>
       <div class="text-center">
         <a href="/api/friends"><button type="button" class="btn btn-lg btn-success"><span class="glyphicon glyphicon-list-alt"></span> View Potential Friends</button></a>
         <a href="/"><button type="button" class="btn btn-lg btn-info"><span class="glyphicon glyphicon-home"></span></button></a>
@@ -23,7 +22,6 @@
     </div>
     <div class="row">
       <div class="col-lg-12">
-        <!-- Survey Page -->
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">Friend Finder Survey</h4>
@@ -39,25 +37,22 @@
                 <label for="picture">Picture</label>
                 <input type="text" class="form-control" id="picture" placeholder="Please include a picture of yourself">
               </div>
-              
+
               <!-- Question 1 -->
               <div class="form-group">
                 <label for="question-one">1. You love cats.</label>
-            <select data-placeholder="" class="chosen-select" id="question-one">
-              <option value=""></option>
-              <option value="1">1 (Not like me)</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5 (Just like me)</option>
-            </select>
-
-
+                <select data-placeholder="" class="chosen-select" id="question-one">
+                  <option value=""></option>
+                  <option value="1">1 (Not like me)</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5 (Just like me)</option>
+                </select>
               </div>
               <!-- Question 2 -->
               <div class="form-group">
                 <label for="question-two">2. You prefer a quiet evening in over going out to a party.</label>
-                
                 <select data-placeholder="" class="chosen-select" id="question-two">
                   <option value=""></option>
                   <option value="1">1 (Not like me)</option>
@@ -70,8 +65,7 @@
               <!-- Question 3 -->
               <div class="form-group">
                 <label for="question-three">3. You prefer a scenic outdoor hike over going to a movie theater.</label>
-                
-              <select data-placeholder="" class="chosen-select" id="question-three">
+                <select data-placeholder="" class="chosen-select" id="question-three">
                   <option value=""></option>
                   <option value="1">1 (Not like me)</option>
                   <option value="2">2</option>
@@ -79,13 +73,11 @@
                   <option value="4">4</option>
                   <option value="5">5 (Just like me)</option>
                 </select>
-
               </div>
               <!-- Question 4 -->
               <div class="form-group">
                 <label for="question-four">4. You like programming.</label>
-                
-              <select data-placeholder="" class="chosen-select" id="question-four">
+                <select data-placeholder="" class="chosen-select" id="question-four">
                   <option value=""></option>
                   <option value="1">1 (Not like me)</option>
                   <option value="2">2</option>
@@ -93,13 +85,11 @@
                   <option value="4">4</option>
                   <option value="5">5 (Just like me)</option>
                 </select>
-
               </div>
               <!-- Question 5 -->
               <div class="form-group">
                 <label for="question-five">5. You find it easy to respect others even if their beliefs may be different from your own.</label>
-                
-              <select data-placeholder="" class="chosen-select" id="question-five">
+                <select data-placeholder="" class="chosen-select" id="question-five">
                   <option value=""></option>
                   <option value="1">1 (Not like me)</option>
                   <option value="2">2</option>
@@ -107,13 +97,11 @@
                   <option value="4">4</option>
                   <option value="5">5 (Just like me)</option>
                 </select>
-
               </div>
               <!-- Question 6 -->
               <div class="form-group">
                 <label for="question-six">6. You are curious about the world, and always eager to learn.</label>
-                
-              <select data-placeholder="" class="chosen-select" id="question-six">
+                <select data-placeholder="" class="chosen-select" id="question-six">
                   <option value=""></option>
                   <option value="1">1 (Not like me)</option>
                   <option value="2">2</option>
@@ -121,13 +109,11 @@
                   <option value="4">4</option>
                   <option value="5">5 (Just like me)</option>
                 </select>
-
               </div>
               <!-- Question 7 -->
               <div class="form-group">
                 <label for="question-seven">7. You care about contributing positively to your community.</label>
-                
-              <select data-placeholder="" class="chosen-select" id="question-seven">
+                <select data-placeholder="" class="chosen-select" id="question-seven">
                   <option value=""></option>
                   <option value="1">1 (Not like me)</option>
                   <option value="2">2</option>
@@ -135,14 +121,11 @@
                   <option value="4">4</option>
                   <option value="5">5 (Just like me)</option>
                 </select>
-
-
               </div>
               <!-- Question 8 -->
               <div class="form-group">
                 <label for="question-eight">8. You enjoy having political debates with others.</label>
-                
-              <select data-placeholder="" class="chosen-select" id="question-eight">
+                <select data-placeholder="" class="chosen-select" id="question-eight">
                   <option value=""></option>
                   <option value="1">1 (Not like me)</option>
                   <option value="2">2</option>
@@ -150,13 +133,11 @@
                   <option value="4">4</option>
                   <option value="5">5 (Just like me)</option>
                 </select>
-
               </div>
               <!-- Question 9 -->
               <div class="form-group">
                 <label for="question-nine">9. You prefer having a few very close friends over having many somewhat close friends.</label>
-                
-              <select data-placeholder="" class="chosen-select" id="question-nine">
+                <select data-placeholder="" class="chosen-select" id="question-nine">
                   <option value=""></option>
                   <option value="1">1 (Not like me)</option>
                   <option value="2">2</option>
@@ -169,8 +150,7 @@
               <!-- Question 10 -->
               <div class="form-group">
                 <label for="question-ten">10. You enjoy board games.</label>
-                
-              <select data-placeholder="" class="chosen-select" id="question-ten">
+                <select data-placeholder="" class="chosen-select" id="question-ten">
                   <option value=""></option>
                   <option value="1">1 (Not like me)</option>
                   <option value="2">2</option>
@@ -178,7 +158,6 @@
                   <option value="4">4</option>
                   <option value="5">5 (Just like me)</option>
                 </select>
-
               </div>
 
               <button type="submit" class="btn btn-info submit">Submit</button>
@@ -194,14 +173,9 @@
     </footer>
   </div>
 </body>
-</html>
 
-
-
-<!-- Modal -->
   <div id="resultsModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
-      <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal"></button>
@@ -217,26 +191,17 @@
       </div>
     </div>
   </div>
-  <script type="text/javascript">
+</html>
 
+<script type="text/javascript">
 
-
-<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
-// <script type="text/javascript">
-    // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
-    // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
-    // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
-    // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
-    $(".submit").on("click", function(event) {
+$(".submit").on("click", function(event) {
       event.preventDefault();
-      // Here we grab the form elements
       var newFriend = {
-        // friend_name: $("#friend-name").val(""),
-        // friend_pic: $("#friend-pic").val(""),
         name: $("#name").val().trim(),
         picture: $("#picture").val().trim(),
         scores: [
-                $("#question-one").val().trim(), 
+                $("#question-one").val().trim(),
                 $("#question-two").val().trim(),
                 $("#question-three").val().trim(),
                 $("#question-four").val().trim(),
@@ -247,39 +212,23 @@
                 $("#question-nine").val().trim(),
                 $("#question-ten").val().trim()
                 ]
-        
+
       };
       console.log(newFriend);
       alert("Profile added!");
 
-      // alert(closestMatch);
-
-      // This line is the magic. It"s very similar to the standard ajax function we used.
-      // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-      // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-      // depending on if a tables is available or not.
       var URL = window.location.origin;
-
       $.post(URL + "/api/friends", newFriend,
         function(data) {
-          // If a table is available... tell user they are booked.
           if (data) {
             console.log("Yay! New friends!");
-          $("#matchName").text(data.name);
-          $("#matchPic").text("src", data.picture);
-          $("#resultsModal").modal('toggle');
-
+            $("#matchName").text(bestMatch.name);//changing from newFriend to bestMatch helped some console.logs print...
+            $("#matchPic").text("src", bestMatch.picture);
+            $("#resultsModal").modal('toggle');
           }
-          // If a table is available... tell user they on the waiting list.
-          // else {
-          //   alert("Sorry you are on the wait list");
-          // }
           // Clear the form when submitting
           $("#name").val("");
           $("#picture").val("");
-
-          // $("#friend-name").val(""); //problem with friend info lines??
-          // $("#friend-pic").val("");
           $("#question-one").val("");
           $("#question-two").val("");
           $("#question-three").val("");
@@ -291,40 +240,6 @@
           $("#question-nine").val("");
           $("#question-ten").val("");
         });
+    });
 
-      
-
-    
-
-    });  
-//  code for comparing friend compatibility
-
-  // for (i = 0; i < friendsArray.length; i++) { //going through array survey entries are pushed to
-
-    // var differences = [ ] //for temporarily storing differences between two surveys
-
-    // differences.push(absolute value of (i.question_one - (i+1).question_one));
-    // differences.push(absolute value of (i.question_two - (i+1).question_two));
-    // differences.push(absolute value of (i.question_three - (i+1).question_three));
-    // differences.push(absolute value of (i.question_four - (i+1).question_four));
-    // differences.push(absolute value of (i.question_five - (i+1).question_five));
-    // differences.push(absolute value of (i.question_six - (i+1).question_six));
-    // differences.push(absolute value of (i.question_seven - (i+1).question_seven));
-    // differences.push(absolute value of (i.question_eight - (i+1).question_eight));
-    // differences.push(absolute value of (i.question_nine - (i+1).question_nine));
-    // differences.push(absolute value of (i.question_ten - (i+1).question_ten));
-    // // there is to be a more concise way to do this... haven't thought of it yet.
-
-    // sum of all i in differences array = var total_difference
-
-    // push total_ difference to object... can you push to an object within an array?
-    
-    // find a way of comparing all the total differences and selecting the lowest question_one
-
-    // print that person's name to an alert
-
-
-  // }
-
-    // });
 </script>
