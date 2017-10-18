@@ -38,17 +38,17 @@ var newFriendScores = newFriend.scores;
 
 // var totalDifference = 0;
 
-for (var i = 0; i < friendArray.length; i++) { //loop through all friends
-	console.log("hello", friends[i].name); //coming up as undefined
+for (var i = 0; i < friends.length; i++) { //loop through all friends
+	console.log(friends[i].name);
 		var totalDifference = 0;
 
-		for (var j = 0; j < friendArray[i].scores[j]; j++) {
-			
+		for (var j = 0; j < friends[i].scores[j]; j++) { //scores is undefined
+  console.log(friends[i].scores[j]);
 			totalDifference += Math.abs((newFriendScores[j]) - (friends[i].scores[j]));
 		}
 }
 
-bestMatch.name = friends[i].name;
+bestMatch.name = friends[i].name; //saying bestMatch is undefined
 bestMatch.picture = friends[i].picture;
 bestMatch.friendDifference = totalDifference;
 
