@@ -25,10 +25,10 @@ var bestMatch = {
   // friendDifference: 0 //individual difference this friend has from most recent survey input
 }
 
-var newFriend = req.body;
-var newFriendName = newFriend.name;
-var newFriendPicture = newFriend.picture;
-var newFriendScores = newFriend.scores;
+// var newFriend = req.body;
+// var newFriendName = newFriend.name;
+// var newFriendPicture = newFriend.picture;
+// var newFriendScores = newFriend.scores;
 
 // var totalDifference = 0;
 
@@ -48,7 +48,7 @@ for (var i = 0; i < friends.length; i++) {
       bestMatch.picture = friends[i].picture;
 
       bestMatch.friendDifference = totalDifference;
-      console.log('difference', totalDifference); //not logging
+      console.log('difference', totalDifference); // logging NaN
 
       friends.push(newFriend);
       res.json(bestMatch);
