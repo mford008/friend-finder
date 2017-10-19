@@ -201,28 +201,34 @@ $(".submit").on("click", function(event) {
         name: $("#name").val().trim(),
         picture: $("#picture").val().trim(),
         scores: [
-                $("#question-one").val().trim(),
-                $("#question-two").val().trim(),
-                $("#question-three").val().trim(),
-                $("#question-four").val().trim(),
-                $("#question-five").val().trim(),
-                $("#question-six").val().trim(),
-                $("#question-seven").val().trim(),
-                $("#question-eight").val().trim(),
-                $("#question-nine").val().trim(),
-                $("#question-ten").val().trim()
+                Number.parseInt($("#question-one").val().trim()),
+                Number.parseInt($("#question-two").val().trim()),
+                Number.parseInt($("#question-three").val().trim()),
+                Number.parseInt($("#question-four").val().trim()),
+                Number.parseInt($("#question-five").val().trim()),
+                Number.parseInt($("#question-six").val().trim()),
+                Number.parseInt($("#question-seven").val().trim()),
+                Number.parseInt($("#question-eight").val().trim()),
+                Number.parseInt($("#question-nine").val().trim()),
+                Number.parseInt($("#question-ten").val().trim())
                 ]
 
       };
       console.log(newFriend);
       alert("Profile added!");
 
+      var bestMatch = {
+      	name: "",
+      	picture: "",
+        totalDifference: 0
+}
+
       var URL = window.location.origin;
       $.post(URL + "/api/friends", newFriend,
         function(data) {
           if (data) {
             console.log("Yay! New friends!");
-            $("#matchName").text(bestMatch.name);//changing from newFriend to bestMatch helped some console.logs print...
+            $("#matchName").prepend('<h1>' + bestMatch.name + '</h1>');//changing from newFriend to bestMatch helped some console.logs print...
             $("#matchPic").text("src", bestMatch.picture);
             $("#resultsModal").modal('toggle');
           }
