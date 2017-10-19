@@ -1,4 +1,27 @@
 var friends = require("../data/friends");
+
+
+function newFriendFormatting(req) {
+  return (newFriend = {
+    name: req.body.name,
+    picture: req.body.picture,
+    scores: [
+      Number(req.body.question_one),
+      Number(req.body.question_two),
+      Number(req.body.question_three),
+      Number(req.body.question_four),
+      Number(req.body.question_five),
+      Number(req.body.question_six),
+      Number(req.body.question_seven),
+      Number(req.body.question_eight),
+      Number(req.body.question_nine),
+      Number(req.body.question_ten)
+    ]
+  });
+}
+
+
+
 module.exports = function(app) {
   app.get("/api/friends", function(req, res) {
     res.json(friends);
@@ -25,10 +48,10 @@ var bestMatch = {
   // friendDifference: 0 //individual difference this friend has from most recent survey input
 }
 
-// var newFriend = req.body;
+var newFriend = req.body;
 // var newFriendName = newFriend.name;
 // var newFriendPicture = newFriend.picture;
-// var newFriendScores = newFriend.scores;
+var newFriendScores = newFriend.scores;
 
 // var totalDifference = 0;
 
@@ -38,8 +61,9 @@ for (var i = 0; i < friends.length; i++) {
 
 		for (var j = 0; j < friends[i].scores[j]; j++) {
   console.log(friends[i].scores);//not logging whole array
-			totalDifference += Math.abs((newFriendScores) - (friends[i].scores));
-      console.log('newfriendscore:', newFriendScores);
+			totalDifference += Math.abs(Number(newFriendScores[j]) - Number(friends[i].scores[j]));
+      console.log('newfriendscore:', newFriendScores); //newFriendScores is an object
+      console.log(typeof newFriendScores[i]);
       console.log(friends[i].scores);
 
 
