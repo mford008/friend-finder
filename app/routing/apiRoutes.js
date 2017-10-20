@@ -28,17 +28,17 @@ var newFriend = req.body;
 // var newFriendName = newFriend.name;
 // var newFriendPicture = newFriend.picture;
 var newFriendScores = newFriend.scores;
-var keys = ['question_one',
-            'question_two',
-            'question_three',
-            'question_four',
-            'question_five',
-            'question_six',
-            'question_seven',
-            'question_eight',
-            'question_nine',
-            'question_ten',
-            ];
+// var keys = ['question_one',
+//             'question_two',
+//             'question_three',
+//             'question_four',
+//             'question_five',
+//             'question_six',
+//             'question_seven',
+//             'question_eight',
+//             'question_nine',
+//             'question_ten',
+//             ];
 var totalDifference = []
 for (var i = 0; i < friends.length; i++) {
 console.log(friends);
@@ -55,11 +55,12 @@ console.log(friends);
       console.log('difference:', totalDifference);
 }
 }
+let minimum  from totalDifference array be equal to bestMatch.totalDifference
       // bestMatch.name = friends[i].name;
       bestMatch.name = friendsArray[i].name;
       console.log('hello', bestMatch.name) //working
       bestMatch.picture = friends[i].picture;
-      if (totalDifference <= bestMatch.friendDifference) {
+      if (totalDifference[i] <= bestMatch.friendDifference) {
         bestMatch.friendDifference = totalDifference;
 
       }
