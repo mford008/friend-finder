@@ -1,5 +1,6 @@
 //This is where friend data should be printed
-var friendArray = [
+var friendsArray = [
+// var friends = [
 {
 	name: "Maddy",
 	picture: "http://www.readersdigest.ca/wp-content/uploads/2011/01/4-ways-cheer-up-depressed-cat.jpg",
@@ -12,4 +13,4 @@ var friendArray = [
 }
 ];
 
-module.exports = friendArray;
+module.exports = friendsArray;
