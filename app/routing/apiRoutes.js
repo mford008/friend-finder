@@ -59,25 +59,24 @@ for (var i = 0; i < friends.length; i++) {
 	console.log(friends[i].name); //working
 		var totalDifference = 0;
 
-		for (var j = 0; j < friends[i].scores[j]; j++) {
-  console.log(friends[i].scores);//not logging whole array
+		for (var j = 0; j < friends[i].scores.length; j++) {
 			totalDifference += Math.abs(Number(newFriendScores[j]) - Number(friends[i].scores[j]));
       console.log('newfriendscore:', newFriendScores); //newFriendScores is an object
-      console.log(typeof newFriendScores[i]);
       console.log(friends[i].scores);
-
-
+      console.log('difference:', totalDifference);
+}
+console.log('is this working?', totalDifference); //yes
       bestMatch.name = friends[i].name;
       console.log('hello', bestMatch.name) //working
       bestMatch.picture = friends[i].picture;
 
       bestMatch.friendDifference = totalDifference;
-      console.log('difference', totalDifference); // logging NaN
+      // console.log('difference', totalDifference); // logging NaN
 
       friends.push(newFriend);
       res.json(bestMatch);
       console.log(bestMatch);//not logging
-    }
+    // }
 }
 });
 // clearing out array
