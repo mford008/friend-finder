@@ -24,11 +24,6 @@ module.exports = function (app) {
         totalDifference[i] += Math.abs(Number(newFriendScores[j]) - Number(friends[i].scores[j]));
       }
     }
-    console.log(friends);
-    console.log('line 31', totalDifference);
-    var minValue = Math.min.apply(null, totalDifference.filter(Boolean));
-    console.log('line 35 min', minValue);
-
 
 // PSEUDOCODE
 // if minValue of totalDifference is equal to a friend's total difference, that friend is the best match
