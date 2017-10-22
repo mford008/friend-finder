@@ -4,10 +4,6 @@ module.exports = function (app) {
     res.json(friends);
   });
 
-  app.get('/api/home', function (req, res) {
-    console.log('friends!');
-  });
-
   app.get('/api/survey', function (req, res) {
     res.json(friends);
   });
@@ -28,15 +24,16 @@ module.exports = function (app) {
         totalDifference[i] += Math.abs(Number(newFriendScores[j]) - Number(friends[i].scores[j]));
       }
     }
+    console.log(friends);
     console.log('line 31', totalDifference);
     var minValue = Math.min.apply(null, totalDifference.filter(Boolean));
     console.log('line 35 min', minValue);
 
 
 // PSEUDOCODE
-// if the minimum value from the array is equal to a friend's total difference (it has to be), that friend is the best match
+// if minValue of totalDifference is equal to a friend's total difference, that friend is the best match
 // function findBestMatch() {
-//   if (minValue === totalDifference[i])
+//   if (minValue === totalDifference[i])//not working
 //     console.log(friends[i].name)
 //   }
 // }
@@ -48,7 +45,7 @@ module.exports = function (app) {
 //   totalDifference: ''
 // };
 // push that value to the header section of the modal:
-// ('#resultsModal').push(bestMatch.name)
+// ('#resultsModal').prepend(bestMatch.name)
 // (code must still work for new friends with lower totalDifference)
     friends.push(newFriend);
     // res.json(bestMatch);

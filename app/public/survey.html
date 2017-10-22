@@ -227,12 +227,11 @@ $(".submit").on("click", function(event) {
       $.post(URL + "/api/friends", newFriend,
         function(data) {
           if (data) {
-            // console.log("Yay! New friends!");
             $("#matchName").prepend('<h1>' + bestMatch.name + '</h1>');//changing from newFriend to bestMatch helped some console.logs print...
             $("#matchPic").text("src", bestMatch.picture);
             $("#resultsModal").modal('toggle');
           }
-          // Clear the form when submitting
+
           $("#name").val("");
           $("#picture").val("");
           $("#question-one").val("");
