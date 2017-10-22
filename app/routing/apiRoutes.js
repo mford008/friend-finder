@@ -27,33 +27,29 @@ module.exports = function (app) {
       for (var j = 0; j < friends[i].scores.length; j++) {
         totalDifference[i] += Math.abs(Number(newFriendScores[j]) - Number(friends[i].scores[j]));
       }
-      // Math.min('minimum line 30', totalDifference);
     }
     console.log('line 31', totalDifference);
-    // Math.min('minimum', totalDifference);
     var minValue = Math.min.apply(null, totalDifference.filter(Boolean));
     console.log('line 35 min', minValue);
 
-    if (minValue === friends.scores) {
-      console.log(friends[i].name);
-    }
 
-
-    // var bestMatch = {
-    //   name: '',
-    //   picture: '',
-    //   totalDifference: ''
-    // };
 // PSEUDOCODE
-// grab minimum value from totalDifferences array, along with associated friend object values.
-// Let bestMatch.name = the name of the friend with the minimum totalDifference value.
-// push that value to the header section of the modal.
-// create code that still works if a new friend is added to the array of friend objects and has a lower totalDifference value,
-// also code can't pick up the new user's entry as the bestMatch
-
-    // if (totalDifference[i] <= bestMatch.friendDifference) {
-      // bestMatch.name = friends[i].name;
-    // }
+// if the minimum value from the array is equal to a friend's total difference (it has to be), that friend is the best match
+// function findBestMatch() {
+//   if (minValue === totalDifference[i])
+//     console.log(friends[i].name)
+//   }
+// }
+// findBestMatch();
+// Let bestMatch.name = the name of the friend with the minimum totalDifference value:
+// var bestMatch = {
+//   name: '',
+//   picture: '',
+//   totalDifference: ''
+// };
+// push that value to the header section of the modal:
+// ('#resultsModal').push(bestMatch.name)
+// (code must still work for new friends with lower totalDifference)
     friends.push(newFriend);
     // res.json(bestMatch);
   });
