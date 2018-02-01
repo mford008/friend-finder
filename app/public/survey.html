@@ -217,23 +217,14 @@ $(".submit").on("click", function(event) {
                   // test whether trim is needed
       };
       console.log(newFriend);
-      // alert("Profile added!");
-
-      // var bestMatch = {
-      // 	name: "",
-      // 	picture: "",
-      //   totalDifference: 0
-// }
-
-// comparison math here
 
       var URL = window.location.origin;
       $.post(URL + "/api/friends", newFriend,
         function (data) {
 
-            $("#matchName").prepend('<h1>' + data.bestMatchName + '</h1>');
-            console.log(data.bestMatchName);
-            $("#matchPic").prepend("src", data.bestMatchPic);
+            $("#matchName").text(data.name);
+            console.log(data.name);
+            $("#matchPic").attr("src", data.image);
             $("#resultsModal").modal('toggle');
 
           $("#name").val("");
@@ -248,6 +239,7 @@ $(".submit").on("click", function(event) {
           $("#question-eight").val("");
           $("#question-nine").val("");
           $("#question-ten").val("");
+          // use a common class here
         });
     });
 
