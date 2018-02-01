@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Survey Page</title>
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> <!--why is this here?-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
   <div class="container">
@@ -197,6 +196,9 @@
 
 $(".submit").on("click", function(event) {
       event.preventDefault();
+
+       // incorporate validation
+
       var newFriend = {
         name: $("#name").val().trim(),
         picture: $("#picture").val().trim(),
@@ -212,25 +214,27 @@ $(".submit").on("click", function(event) {
                 Number($("#question-nine").val().trim()),
                 Number($("#question-ten").val().trim())
                 ]
-
+                  // test whether trim is needed
       };
       console.log(newFriend);
-      alert("Profile added!");
+      // alert("Profile added!");
 
-      var bestMatch = {
-      	name: "",
-      	picture: "",
-        totalDifference: 0
-}
+      // var bestMatch = {
+      // 	name: "",
+      // 	picture: "",
+      //   totalDifference: 0
+// }
+
+// comparison math here
 
       var URL = window.location.origin;
       $.post(URL + "/api/friends", newFriend,
-        function(data) {
-          if (data) {
-            $("#matchName").prepend('<h1>' + bestMatch.name + '</h1>');//changing from newFriend to bestMatch helped some console.logs print...
-            $("#matchPic").text("src", bestMatch.picture);
+        function (data) {
+
+            $("#matchName").prepend('<h1>' + data.bestMatchName + '</h1>');
+            console.log(data.bestMatchName);
+            $("#matchPic").prepend("src", data.bestMatchPic);
             $("#resultsModal").modal('toggle');
-          }
 
           $("#name").val("");
           $("#picture").val("");
