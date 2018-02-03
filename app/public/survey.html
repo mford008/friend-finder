@@ -182,7 +182,7 @@
         </div>
         <div class="modal-body">
           <h2 id="matchName"></h2>
-          <img id="matchPic" src="google.com" alt="">
+          <img id="matchPic" src="google.com" alt="" height=500px width=500px overflow=hidden>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
@@ -192,45 +192,4 @@
   </div>
 </html>
 
-<script type="text/javascript">
-
-$(".submit").on("click", function(event) {
-      event.preventDefault();
-
-       function validate() {
-         var isValid = true;
-         $(".form-control").each(function() {
-           if ($(this).val() === '') {
-             isValid = false;
-           }
-         });
-         return isValid;
-       }
-       if (validate() === true) {
-         var newFriend = {
-           name: $("#name").val().trim(),
-           picture: $("#picture").val().trim(),
-           scores: [
-                   Number($(".chosen-select").val().trim()),
-                   ]
-         };
-         console.log(newFriend);
-
-         var URL = window.location.origin;
-         $.post(URL + "/api/friends", newFriend,
-           function (data) {
-
-               $("#matchName").text(data.name);
-               $("#matchPic").attr("src", data.picture);
-               $("#resultsModal").modal('toggle');
-
-             $("#name").val("");
-             $("#picture").val("");
-             $(".chosen-select").val("");
-
-           });
-       }
-       else alert("Please complete all fields");
-     });
-
-</script>
+<script type="text/javascript" src="./js/script.js"></script>
