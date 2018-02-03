@@ -182,7 +182,7 @@
         </div>
         <div class="modal-body">
           <h2 id="matchName"></h2>
-          <img id="matchPic" src="" alt="">
+          <img id="matchPic" src="google.com" alt="">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
@@ -197,50 +197,40 @@
 $(".submit").on("click", function(event) {
       event.preventDefault();
 
-       // incorporate validation
+       function validate() {
+         var isValid = true;
+         $(".form-control").each(function() {
+           if ($(this).val() === '') {
+             isValid = false;
+           }
+         });
+         return isValid;
+       }
+       if (validate() === true) {
+         var newFriend = {
+           name: $("#name").val().trim(),
+           picture: $("#picture").val().trim(),
+           scores: [
+                   Number($(".chosen-select").val().trim()),
+                   ]
+         };
+         console.log(newFriend);
 
-      var newFriend = {
-        name: $("#name").val().trim(),
-        picture: $("#picture").val().trim(),
-        scores: [
-                Number($("#question-one").val().trim()),
-                Number($("#question-two").val().trim()),
-                Number($("#question-three").val().trim()),
-                Number($("#question-four").val().trim()),
-                Number($("#question-five").val().trim()),
-                Number($("#question-six").val().trim()),
-                Number($("#question-seven").val().trim()),
-                Number($("#question-eight").val().trim()),
-                Number($("#question-nine").val().trim()),
-                Number($("#question-ten").val().trim())
-                ]
-                  // test whether trim is needed
-      };
-      console.log(newFriend);
+         var URL = window.location.origin;
+         $.post(URL + "/api/friends", newFriend,
+           function (data) {
 
-      var URL = window.location.origin;
-      $.post(URL + "/api/friends", newFriend,
-        function (data) {
+               $("#matchName").text(data.name);
+               $("#matchPic").attr("src", data.picture);
+               $("#resultsModal").modal('toggle');
 
-            $("#matchName").text(data.name);
-            console.log(data.name);
-            $("#matchPic").attr("src", data.image);
-            $("#resultsModal").modal('toggle');
+             $("#name").val("");
+             $("#picture").val("");
+             $(".chosen-select").val("");
 
-          $("#name").val("");
-          $("#picture").val("");
-          $("#question-one").val("");
-          $("#question-two").val("");
-          $("#question-three").val("");
-          $("#question-four").val("");
-          $("#question-five").val("");
-          $("#question-six").val("");
-          $("#question-seven").val("");
-          $("#question-eight").val("");
-          $("#question-nine").val("");
-          $("#question-ten").val("");
-          // use a common class here
-        });
-    });
+           });
+       }
+       else alert("Please complete all fields");
+     });
 
 </script>
