@@ -1,5 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var path = require('path');
+
 var app = express();
 var PORT = process.env.PORT || 8080;
 
@@ -10,6 +12,10 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
 require('./app/routing/apiRoutes')(app);
 require('./app/routing/htmlRoutes')(app);
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'home.html'));
+});
 
 app.listen(PORT, function () {
   console.log('Listening on port: ' + PORT);
