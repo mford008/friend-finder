@@ -14,7 +14,7 @@ require('./app/routing/apiRoutes')(app);
 require('./app/routing/htmlRoutes')(app);
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'home.html'));
+  res.sendFile(path.join(__dirname, 'public'));
 });
 
 app.listen(PORT, function () {
