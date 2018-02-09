@@ -3,22 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <title>Survey Page</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./css/reset.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+
   <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
 </head>
 <body>
   <div class="container">
+    <img src="../../images/friend-finder-title.png" alt="strangerthings" height=327px>
     <div class="jumbotron">
-      <h1 class="text-center"><span class="glyphicon glyphicon-user"></span>Friend Finder Survey</h1>
-        <br>
-      <h2 class="text-center">Find your new friend</h2>
+      <h1 class="text-center">FIND YOUR STRANGER THINGS BFF</h2>
         <br>
       <div class="text-center">
-        <a href="/api/friends"><button type="button" class="btn btn-lg btn-success"><span class="glyphicon glyphicon-list-alt"></span> View Potential Friends</button></a>
-        <a href="/"><button type="button" class="btn btn-lg btn-info"><span class="glyphicon glyphicon-home"></span></button></a>
+        <a href="/api/friends"><button type="button" class="btn btn-lg btn-info"><span class="glyphicon glyphicon-list-alt"></span> View Potential Friends</button></a>
+        <a href="/"><button type="button" class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-home"></span></button></a>
       </div>
     </div>
     <div class="row">
@@ -184,7 +186,7 @@
         </div>
         <div class="modal-body">
           <h2 id="matchName"></h2>
-          <img id="matchPic" src="google.com" alt="" height=500px width=500px overflow=hidden>
+          <img id="matchPic" alt="" height=500px width=500px overflow=hidden>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
