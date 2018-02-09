@@ -229,9 +229,8 @@ $('.submit').on('click', function (event) {
       $("#matchName").text(data.name);
       $("#matchPic").attr('src', data.picture);
       $("#resultsModal").modal('toggle');
-      console.log(data.name);
-      $('#name').val('');
-      $('#picture').val('');
+      $("#name").val('');
+      $("#picture").val('');
       $('.chosen-select').val('');
     });
   } else alert('Please complete all fields');
