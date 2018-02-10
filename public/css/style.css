@@ -19,7 +19,7 @@ html, body {
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
 }
-form {
+#resultsModal, form, button {
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
 }

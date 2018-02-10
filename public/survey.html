@@ -2,19 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Survey Page</title>
-  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <title>Stranger Things Friend Finder Survey</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
   <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
   <div class="container">
     <img src="css/images/friend-finder-title.png" alt="strangerthings" height=327px>
     <div class="jumbotron">
-      <h1 class="text-center">FIND YOUR STRANGER THINGS BFF</h2>
+      <h1 class="text-center">Find Your Stranger Things BFF</h2>
         <br>
       <div class="text-center">
         <a href="/api/friends"><button type="button" class="btn btn-lg btn-info"><span class="glyphicon glyphicon-list-alt"></span> View Potential Friends</button></a>
@@ -186,7 +185,7 @@
           <img id="matchPic" alt="" height=500px width=500px overflow=hidden>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -222,15 +221,15 @@ $('.submit').on('click', function (event) {
         Number($('#question-ten').val().trim())
       ]
     };
-
     var URL = window.location.origin;
   $.post(URL + '/api/friends', newFriend,
     function (data) {
       $("#matchName").text(data.name);
       $("#matchPic").attr('src', data.picture);
       $("#resultsModal").modal('toggle');
-      $("#name").val('');
-      $("#picture").val('');
+      console.log(data.name);
+      $('#name').val('');
+      $('#picture').val('');
       $('.chosen-select').val('');
     });
   } else alert('Please complete all fields');
