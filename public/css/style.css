@@ -6,7 +6,7 @@ html, body {
     margin-bottom: 20px;
     margin-top: 20px;
     background-image: url(images/gradient.png);
-    background-size: 220%;
+    background-size: 300%;
 }
 .jumbotron h1 {
   align-items: flex-end;
@@ -25,4 +25,5 @@ html, body {
 }
 p,a {
   color: #df2521;
+  font-family: 'Poppins', sans-serif;
 }
