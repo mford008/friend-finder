@@ -1,9 +1,8 @@
-# Friend Finder
-## An Express application for finding your new BFF
+# Stranger Things Friend Finder
+## Do you love Netflix's "Stranger Things?"
 
-This application uses Express, Node.js, and JavaScript. Users complete a compatibility survey to find friends. The application runs through each user's survey answers in order to find the most compatible (lowest index of difference) friends.
+Then find out who your Stranger Things BFF would be by taking this short quiz! This application uses Express, Node.js, jQuery, and JavaScript to calculate user compatibility with pre-set profiles for several characters from "Stranger Things." Users can complete the survey to see who their answers are most similar to. The application uses jQuery and JavaScript to loop through each user's survey answers in comparison to pre-set profiles in order to find the friends that are most compatible (have the lowest index of difference).
 
-I developed this application as a UC Berkeley Extension homework assignment emphasizing server use and Express.
+<a href="http://g.recordit.co/xNbUCS1soe.gif"><img src="http://g.recordit.co/xNbUCS1soe.gif"></a>
 
-## This application is deployed on Heroku:
- * https://gentle-reaches-82184.herokuapp.com
+Yes, "Stranger Things" was playing in the background for the duration of this application's development.
