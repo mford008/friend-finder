@@ -6,3 +6,5 @@ Then find out who your Stranger Things BFF would be by taking this short quiz! T
 <a href="http://g.recordit.co/xNbUCS1soe.gif"><img src="http://g.recordit.co/xNbUCS1soe.gif"></a>
 
 Yes, "Stranger Things" was playing in the background for the duration of this application's development.
+
+This application is not officially affiliated in any way with Netflix or "Stranger Things." I do not own any of the images or fonts displayed in this application.
