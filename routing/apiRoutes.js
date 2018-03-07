@@ -36,9 +36,4 @@ module.exports = function (app) {
 
     res.send(friends[bestFriend]);
   });
-  // Clears friends from api
-  app.post('/api/clear', function () {
-    let friendsArray = [];
-    console.log('Cleared: ' + friendsArray);
-  });
 };

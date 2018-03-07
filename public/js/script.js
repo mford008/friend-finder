@@ -39,14 +39,3 @@ $('.submit').on('click', function (event) {
     });
   } else alert('Please complete all fields');
 });
-
-// function clearFriends () {
-//   console.log("test");
-//   var URL = window.location.origin;
-//   $.ajax({ url: URL + "/api/clear", method: "POST"});
-// }
-// $("#take-again").on("click", function (event) {
-//   console.log("clicked");
-//   event.preventDefault();
-//   clearFriends();
-// });
