@@ -38,7 +38,7 @@ module.exports = function (app) {
   });
   // Clears friends from api
   app.post('/api/clear', function () {
-    friends = [];
-    console.log('Cleared: ' + friends);
+    let friendsArray = [];
+    console.log('Cleared: ' + friendsArray);
   });
 };
